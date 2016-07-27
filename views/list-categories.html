@@ -1,0 +1,9 @@
+<input type="text" ng-model="q" placeholder="Filter images">
+<ul>
+    <li ng-repeat="ctg in collection|filter:q">
+        <a ng-href="#/items/{{$index}}" title="{{ctg.genre}}">
+            {{ctg.genre}}   <span class="badge">{{ ctg.items.length }}</span>
+        </a>
+    </li>
+</ul>
+<p ng-show="message">Error:{{message}}</p>
